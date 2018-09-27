@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reserve.lk
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding="true">
+
+  <h3 >Booking Overview</h3>
+
+  <div>
+
+    <ion-item>
+      <ion-label><font size="2.5">Hotel Name</font></ion-label>
+      <ion-input type="text" text-right=""  ngModel="{{hotelname}}">
+      </ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label><font size="2.5">Room Type</font></ion-label>
+      <ion-input type="text"  text-right="" ngModel="{{rmType}}">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label><font size="2.5">Max Guests</font></ion-label>
+      <ion-select ngModel="{{cap}}">
+        <ion-option value="1">1</ion-option>
+        <ion-option value="2">2</ion-option>
+        <ion-option value="3">3</ion-option>
+        <ion-option value="4">4</ion-option>
+        <ion-option value="5">5</ion-option>
+        <ion-option value="6">6</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label><font size="2.5" >Check-in Date</font></ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="tomo"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label><font size="2.5">Check-out Date</font></ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="today"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label><font size="2.5">For</font></ion-label>
+      <ion-input type="text"  text-right="" ngModel="1 Night"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label><font size="2.5">Right now you'll pay</font></ion-label>
+      <ion-input type="text"  text-right="" ngModel="0 USD"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label><font size="2.5">On arrival you'll pay</font></ion-label>
+      <ion-input type="text"  text-right="" ngModel="{{price}}" ></ion-input>
+    </ion-item>
+
+    <!--ion-item no-lines>
+      <ion-icon small name="information-circle" item-left> No payment needed today</ion-icon>
+    </ion-item-->
+
+
+
+    <!--p>You'll pay during your stay !</p-->
+
+
+
+
+  </div>
+
+  <button ion-button block (click)="viewsecurebook2(hotelname,rmType,price,tomo,today)">Fill in your info</button>
+
+
+
+
+
+
+</ion-content>
+

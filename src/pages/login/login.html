@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reserve.lk
+    </ion-title>
+    <!--<ion-buttons end>
+      <button (click)="homePage()" ion-button icon-only>
+        <ion-icon name="md-home"></ion-icon>
+      </button>
+    </ion-buttons>-->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding="true">
+
+<div class="spacer" style="height: 40px;"></div>
+
+    <p style="text-align: center"><font size="2.5">If you are a current user in
+      <b>Reserve.lk</b> you can login.
+    </font></p>
+
+    <!--LoginForm-->
+    <ion-list>
+      <ion-item>
+        <ion-label><font size="2.5">Email</font></ion-label>
+        <ion-input type="text" required [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label><font size="2.5">Password</font></ion-label>
+        <ion-input type="password" required minlength="5" [(ngModel)]="password"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <!--LoginButton-->
+    <button ion-button block (click)= "login(email,password)"> Log In </button>
+
+    <button ion-button color="light" clear block (click)= "loginPage()"></button>
+
+    <div class="spacer" style="height: 40px;"></div>
+
+    <p style="text-align: center"><font size="2.5"> Don't have an <b>Reserve.lk</b> account? </font></p>
+
+    <!--SignupButton-->
+    <button ion-button block (click)= "signupPage();"> Signup </button>
+
+    
+
+</ion-content>

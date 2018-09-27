@@ -1,0 +1,162 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reserve.lk
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!--Hotel description start-->
+  <div>
+    <ion-slides pager >
+
+      <ion-slide style="max-width:100%;width:1000px;max-height:100%;height:250px">
+        <img src="{{parameter1}}" alt="Photo">
+      </ion-slide>
+
+      <ion-slide style="max-width:100%;width:1000px;max-height:100%;height:250px">
+        <img src="{{parameter6}}" alt="Photo">
+      </ion-slide>
+
+      <ion-slide style="max-width:100%;width:1000px;max-height:100%;height:250px">
+        <img src="{{parameter7}}" alt="Photo">
+      </ion-slide>
+
+      <ion-slide style="max-width:100%;width:1000px;max-height:100%;height:250px">
+        <img src="{{parameter8}}" alt="Photo">
+      </ion-slide>
+
+      <ion-slide style="max-width:100%;width:1000px;max-height:100%;height:250px">
+        <img src="{{parameter9}}" alt="Photo">
+      </ion-slide>
+
+      <!--ion-slide style="max-width:100%;width:1000px;max-height:100%;height:250px">
+        <img src="" alt="Photo">
+      </ion-slide-->
+
+    </ion-slides>
+
+  </div>
+
+  <div>
+    <ion-card-header style="color:#000000;">
+      <font size="3" >
+        {{parameter2}}
+      </font>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item no-lines text-wrap><font size="2" color="blue" >{{parameter3}}</font>
+      </ion-item>
+    </ion-card-content>
+
+    <ion-list>
+      <ion-grid >
+        <ion-row>
+          <ion-col width-50><button ion-button block icon-left  outline (click)=" showConfirm();" [ngStyle]="{'background-color': buttonColor}" style="width:100%"><ion-icon name="home"></ion-icon>Add Fav</button></ion-col>
+          <ion-col width-50><button ion-button block style="width:100%" (click)="viewRoomPage(parameter2,parameter1)">View Rooms</button></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+
+  </div>
+
+
+  <div>
+    <ion-card-header style="color:#000000;">
+      <font size="3" >
+        Hotel Description
+      </font>
+    </ion-card-header>
+
+    <ion-card-content style="text-align: justify;color: #cccccc ">
+
+      <ion-item text-wrap>
+        <p>{{parameter4}}
+          <br>
+          <br>
+          <font size="3">
+            <a (click)="showhoteldescription(parameter2,parameter4)" style="text-decoration-color: #4b8bf4;text-decoration: none;">Read full description</a>
+          </font>
+        </p>
+      </ion-item>
+
+    </ion-card-content>
+  </div>
+
+  <!--Hotel description end-->
+
+  <!--Hotel Fcilities-->
+  <div>
+
+    <ion-card-header>
+      <font size="3" >
+        Hotel Facilities
+      </font>
+    </ion-card-header>
+
+    <ion-card-content style="text-align: justify;color: #cccccc ">
+
+      <ion-item text-wrap>
+        <p>{{parameter5}}
+          <br>
+          <br>
+          <font size="3">
+            <a (click)="presentModal(parameter2,parameter5)" style="text-decoration-color: #4b8bf4;text-decoration: none;">See all Facilities</a>
+          </font>
+        </p>
+      </ion-item>
+
+    </ion-card-content>
+  </div>
+  <!--Hotel Fcilities end-->
+
+
+  <!--Availability start-->
+  <div>
+
+    <ion-card-header>
+      <font size="3">
+        Availability
+      </font>
+    </ion-card-header>
+
+    <!--ion-card-header>
+      <button ion-item text-wrap (click)="chooseAccPage()" >
+      <ion-icon style="color:#2d2d2d" name="apps" item-left>
+      </ion-icon>
+        <font size="5">
+      Availability
+        </font>
+    </button>
+    </ion-card-header-->
+
+
+    <ion-card-content style="color:#2d2d2d;" >
+      <ion-item no-lines="">
+        <ion-label>Check-in Date</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="today"></ion-datetime>
+      </ion-item>
+
+      <ion-item no-lines>
+        <ion-label>Check-in Date</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="tomo"></ion-datetime>
+      </ion-item>
+
+
+
+      <ion-item>
+        <a (click)="chooseAccPage()">Change dates</a>
+      </ion-item>
+    </ion-card-content>
+
+  </div>
+  <!--Availability end-->
+
+
+
+</ion-content>
+
+
+<ion-footer><button ion-button block (click)="cancleroombooking()">Cancle Reservation</button></ion-footer>

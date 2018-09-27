@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reserve.lk
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="OptionPage1()" ion-button icon-only>
+        <ion-icon name="md-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<!--HotelList-->
+<div>
+    <ion-list>
+      <ion-item *ngFor="let hdetail of hdetails | async" text-wrap>
+        <h2>{{hdetail.hotel_name}}</h2>
+        <p> <font size="2"> <b>Address: </b> {{hdetail.hotel_address}} </font> </p>
+        <p> <font size="2"> <b>Phone: </b> {{hdetail.hotel_contact1}} </font> </p>
+        <button ion-button clear (click)="viewHotelPage()">Book Now!</button>
+      </ion-item>    
+    </ion-list>
+</div>
+  
+
+
+</ion-content>

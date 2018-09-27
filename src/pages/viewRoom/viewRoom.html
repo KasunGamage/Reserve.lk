@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reserve.lk
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list no-padding="" *ngFor="let items of hroom | async">
+
+    <div *ngIf="items.r_hname === hote" >
+
+      <ion-item no-lines>
+
+        <ion-avatar item-left>
+          <img src="{{hoteimg}}">
+        </ion-avatar>
+
+        <h2>{{hote}}</h2>
+        <p>{{items.r_type}}</p>
+
+      </ion-item>
+
+
+      <div>
+        <img src="{{items.r_img}}">
+      </div>
+
+
+
+      <div>
+
+
+        <ion-item no-lines no-padding text-wrap>
+
+          <ion-row>
+            <ion-col>
+              <a ion-button icon-left clear >
+                <ion-icon name="checkmark"></ion-icon>
+                <p><font size="2">{{items.r_features1}}</font></p>
+              </a>
+            </ion-col>
+
+            <ion-col>
+              <a ion-button icon-left clear >
+                <ion-icon name="checkmark"></ion-icon>
+                <p><font size="2" >{{items.r_features2}}</font></p>
+              </a>
+
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <a ion-button icon-left clear>
+                <ion-icon name="checkmark"></ion-icon>
+                <p><font size="2">Capacity:{{items.r_nbrofguest}}</font></p>
+              </a>
+            </ion-col>
+
+            <ion-col>
+              <a ion-button icon-left clear>
+                <ion-icon name="checkmark"></ion-icon>
+                <p><font size="2">{{items.r_bedtype}}</font></p>
+              </a>
+
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <a ion-button icon-left clear>
+                <ion-icon name="checkmark"></ion-icon>
+                <p><font size="2">{{items.r_features5}}</font></p>
+              </a>
+            </ion-col>
+
+            <ion-col>
+              <a ion-button icon-left clear>
+                <ion-icon name="checkmark"></ion-icon>
+                <p><font size="2">{{items.r_price}}</font></p>
+              </a>
+
+            </ion-col>
+          </ion-row>
+
+
+        </ion-item>
+
+      </div>
+
+
+      <button ion-button block (click)=" secureBookPage(hote,items.r_type,items.r_nbrofguest,items.r_price)" >Book Now</button>
+
+
+    </div>
+
+
+  </ion-list>
+
+
+</ion-content>

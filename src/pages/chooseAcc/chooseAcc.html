@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reserve.lk
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+<ion-list >
+
+  <ion-item >
+      <ion-label style="color:#2d2d2d">Check-in Date</ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="today"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+      <ion-label style="color:#2d2d2d">Check-out Date</ion-label>
+      <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="tomo"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label style="color:#2d2d2d">Nbr Of Guest</ion-label>
+    <ion-select [(ngModel)]="choose">
+      <ion-option value="nes">1 member</ion-option>
+      <ion-option value="n64" selected="true">2 member</ion-option>
+      <ion-option value="ps">3 member</ion-option>
+      <ion-option value="genesis">4 member</ion-option>
+
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <button ion-button block>Save</button>
+  </ion-item>
+
+</ion-list>
+
+
+
+
+
+
+
+
+</ion-content>

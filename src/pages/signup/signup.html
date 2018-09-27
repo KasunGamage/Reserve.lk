@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reserve.lk
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="loginPage()" ion-button icon-only>
+        <ion-icon name="md-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div id="reserveLk-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
+    <p style="color:#000000;" ><font size="2.5"> Enter your details to sign up with <b>Reserve.lk</b> and
+      feel free to enjoy our services.
+    </font></p>
+  </div>
+
+  <!--SignupForm-->
+  <div>
+      <ion-list>
+
+        <!--CustomerName-->
+        <ion-item>
+            <ion-label><font size="2.5">Name</font></ion-label>
+            <ion-input type="text" id="cname" required [(ngModel)]="cname" cname="ngModel" ></ion-input>
+        </ion-item>
+        
+        <!--Email-->        
+        <ion-item>
+          <ion-label><font size="2.5">Email</font></ion-label>
+          <ion-input type="text" class="form-control" id="email" required [(ngModel)]="email"></ion-input>
+        </ion-item>        
+
+        <!--Contact-->
+        <ion-item>
+            <ion-label><font size="2.5">Contact Number</font></ion-label>
+            <ion-input type="text" id="contact" required minlength="10" maxlength="10" [(ngModel)]="contact"></ion-input>
+        </ion-item>
+
+        <!--NIC-->
+        <ion-item>
+            <ion-label><font size="2.5">NIC</font></ion-label>
+            <ion-input type="text" id="nic" required minlength="10" maxlength="10" [(ngModel)]="nic"></ion-input>
+        </ion-item>
+
+        <!--Password-->
+        <ion-item>
+            <ion-label><font size="2.5">Password</font></ion-label>
+            <ion-input type="password" id="pwd" required minlength="5" [(ngModel)]="pwd"></ion-input>
+        </ion-item>
+
+      </ion-list>
+  </div>
+
+  <!--SignupButton)-->
+    <button ion-button block (click)= "signUpUser(cname,email,contact,nic,pwd);"> Signup Now </button>
+
+  <!--SignupButton(back to login page)
+    <button ion-button block (click)= "loginPage();"> Back to login </button>
+  -->
+
+
+</ion-content>

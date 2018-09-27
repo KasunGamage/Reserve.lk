@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reserve.lk
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="OptionPage2()" ion-button icon-only>
+        <ion-icon name="md-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding="true">
+
+  <div id="reserveLkMainMenu-markdown2" class="show-list-numbers-and-dots">
+    <p style="color:#000000;"><font size="2">Enter the Hotel name</font></p>
+  </div>
+
+  <!--SearchBar-->
+  <div>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  </div>
+
+  <p style="text-align: center"><font size="2"> or </font></p>
+
+  <!--SearchByLocationBtn/ViewAllHotels-->
+  <button ion-button block>Search By Your Location</button>
+
+  <!--Map-->
+  <button ion-button block (click)= "MapPage();">Locate Me!</button>
+
+  <!--<div class="spacer" style="height: 40px;"></div>-->
+
+  <!--Filters-->
+  <div>
+    <ion-card>
+      <ion-card-header>
+        <p style="text-align: center"><font size="2"><b> Filters | Your Budget </b></font></p>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list inset>
+          <ion-item>
+            <ion-label><font size="2.5"> Maximum </font></ion-label>
+            <ion-input id="max" type="text" [value]="max" [(ngModel)]="max"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label><font size="2.5"> Minimum </font></ion-label>
+            <ion-input id="min" type="text" [value]="min" [(ngModel)]="min"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <!--ApplyFiltersBtn-->
+  <button ion-button outline block (click)="filerSearch()">Apply Filters</button>
+
+  <!--HotelList-->
+  <div>
+    <ion-list>
+      <ion-item *ngFor="let country of countryList" text-wrap>
+        <h2>{{country.hotel_name}}</h2>
+        <p> <font size="2"> <b>Address: </b> {{country.hotel_address}} </font> </p>
+        <p> <font size="2"> <b>Phone: </b> {{country.hotel_contact1}} </font> </p>
+        <button ion-button clear (click)="viewHotelPage(country.hotel_img1,country.hotel_name,country.hotel_address,country.hotel_description,country.hotel_features,country.hotel_img2,country.hotel_img3,country.hotel_img4,country.hotel_img5)">Book Now!</button>
+      </ion-item>
+    </ion-list>
+  </div>
+
+</ion-content>

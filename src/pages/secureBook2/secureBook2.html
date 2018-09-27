@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reserve.lk
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h3>Your Information</h3>
+  <div id="reserveLk-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
+    <p style="color:#000000;" ><font size="2.5"> Enter your details to complete the reservation.
+    </font></p>
+  </div>
+
+  <div>
+
+
+
+    <ion-list>
+
+      <form [formGroup]="Form1">
+        <!--ion-item>
+          <ion-label><font size="2.5">First Name</font></ion-label>
+          <ion-input type="text" formControlName="firstName"></ion-input>
+
+        </ion-item-->
+
+
+        <ion-item>
+          <ion-label><font size="2.5">First Name</font></ion-label>
+          <ion-input text-right="" formControlName="firstName" type="text" [(ngModel)]="rfname" [class.invalid]="!Form1.controls.firstName.valid && (Form1.controls.firstName.dirty || submitAttempt)"> <font size="2"></font></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!Form1.controls.firstName.valid  && (Form1.controls.firstName.dirty || submitAttempt)">
+          <p style="color: #ea6153;">Please enter a valid name.</p>
+        </ion-item>
+
+        <ion-item>
+          <ion-label><font size="2.5">Last Name</font></ion-label>
+          <ion-input text-right="" formControlName="lastName" type="text" [(ngModel)]="rlname" [class.invalid]="!Form1.controls.lastName.valid && (Form1.controls.lastName.dirty || submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!Form1.controls.lastName.valid  && (Form1.controls.lastName.dirty || submitAttempt)">
+          <p style="color: #ea6153;">Please enter a valid name.</p>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label><font size="2.5">Email Address</font></ion-label>
+          <ion-input type="text" text-right="" formControlName="email" [(ngModel)]="remail" [class.invalid]="!Form1.controls.email.valid && (Form1.controls.email.dirty || submitAttempt)"></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!Form1.controls.email.valid  && (Form1.controls.email.dirty || submitAttempt)">
+          <p style="color: #ea6153;">Please enter a valid email.</p>
+        </ion-item>
+
+
+        <!--p><font size="2">We'll send your booking confirmation to this email.</font></p-->
+
+        <ion-item>
+          <ion-label><font size="2.5">Mobile</font></ion-label>
+          <ion-input text-right="" formControlName="mobile" type="text" [(ngModel)]="rmobile" [class.invalid]="!Form1.controls.mobile.valid && (Form1.controls.mobile.dirty || submitAttempt)">
+          </ion-input>
+        </ion-item>
+
+        <ion-item text-wrap="" *ngIf="!Form1.controls.mobile.valid  && (Form1.controls.mobile.dirty || submitAttempt)">
+          <p style="color: #ea6153;">Please enter a valid mobile number that contain 10 numbers.</p>
+        </ion-item>
+
+        <ion-item text-wrap="">
+          <ion-label><font size="2.5">Booking is for</font></ion-label>
+          <ion-select formControlName="bookop" text-right="" text-wrap="" [(ngModel)]="rbookop"[class.invalid]="!Form1.controls.bookop.valid && (Form1.controls.bookop.dirty || submitAttempt)">
+            <ion-option value="myself" checked>myself</ion-option>
+            <ion-option value="someone else">someone else</ion-option>
+          </ion-select>
+        </ion-item>
+
+
+        <ion-item text-wrap="" *ngIf="!Form1.controls.bookop.valid  && (Form1.controls.bookop.dirty || submitAttempt)">
+          <p style="color: #ea6153;">Please choose 1 option.</p>
+        </ion-item>
+
+        <!--p><font size="2">Free cancellation untill 11.59 on opijpij.</font>
+      <p><font size="2">No credit card required to book this hotel.</font-->
+
+      </form>
+    </ion-list>
+
+    <button ion-button block (click)="viewsecurebook3(remail)">Finish booking</button>
+  </div>
+
+
+
+</ion-content>

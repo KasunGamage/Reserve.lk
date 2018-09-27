@@ -1,0 +1,8 @@
+{
+  "name": "Reserve.lk",
+  "app_id": "",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reserve.lk
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="OptionPage3()" ion-button icon-only>
+        <ion-icon name="md-home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div>
+        <i class="icon  icon-right ion-android-cancel"></i>
+        <p style="text-align: center"><font size="3"><b>Cancel Booking</b></font></p>
+    </div>
+
+    <div>
+        <ion-label class="item item-input">
+        <div class="input-label">
+        Booking number
+        <ion-input type="text" placeholder="number" ></ion-input>
+        </div>
+    </ion-label>
+    </div>
+      
+    <!--CancelButton-->
+  <button ion-button block (click)= "doAlert()"> Cancel</button>
+    
+
+
+
+</ion-content>

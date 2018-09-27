@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reserve.lk
+    </ion-title>
+
+      <ion-buttons end>
+        <!--UserProfile
+          <button (click)="loginPage();" ion-button icon-only>
+            <ion-icon name="ios-contact"></ion-icon>
+          </button>
+        
+        Logout-->
+          <button (click)="loginPage();" ion-button icon-only>
+            <ion-icon name="md-power"></ion-icon>
+          </button>        
+      </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!--RoomReservation-->
+  <div>
+    <p style="text-align: center"><font size="2">If you are looking for Accommodation while
+        spending your vaccation</font></p>
+
+    <!--
+    <div>
+        <img src="img/optionpage/room.jpg" style="display: block; width: 100%; margin-left: auto; margin-right: auto;">
+    </div>-->
+
+    <!--PhotoSlide-->
+    <div>
+      <ion-slides pager>
+        <ion-slide>
+          <img src="assets/img/room1.jpg" style="display: block; width: 100%; margin-left: auto; margin-right: auto;">
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/img/room2.jpg" style="display: block; width: 100%; margin-left: auto; margin-right: auto;">
+        </ion-slide>
+        <ion-slide>
+          <img src="assets/img/room3.jpg" style="display: block; width: 100%; margin-left: auto; margin-right: auto;">
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+    <button ion-button block (click)= "nextPage();">Room Reservation</button>
+
+  </div>
+
+  <div class="spacer" style="height: 40px;"></div>
+
+  <!--TableReservation-->
+  <div>
+    <p style="text-align: center"><font size="2">If you are looking for a table arrangement
+      to have your meal with your lovelies</font></p>
+
+    <!--
+    <div>
+        <img src="img/optionpage/table.jpg" style="display: block; width: 100%; margin-left: auto; margin-right: auto;">
+    </div>
+    -->
+
+    <!--PhotoSlide-->
+    <div>
+      <ion-slides pager>
+      <ion-slide>
+        <img src="assets/img/res1.jpg" style="display: block; width: 100%; margin-left: auto; margin-right: auto;">
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/img/res2.jpg" style="display: block; width: 100%; margin-left: auto; margin-right: auto;">
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/img/res3.jpg" style="display: block; width: 100%; margin-left: auto; margin-right: auto;">
+      </ion-slide>
+    </ion-slides>
+    </div>
+
+    <button ion-button block (click)= "tablerPage();">Table Reservation</button>
+  </div>
+  
+  <!--
+  <div class="spacer" style="height: 40px;"></div>
+
+  Logout
+  <div>
+    <button ion-button block (click)= "loginPage();">Logout</button>
+  </div>-->
+
+</ion-content>

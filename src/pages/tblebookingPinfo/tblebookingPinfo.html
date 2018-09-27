@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reserve.lk
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding="true">
+
+<div>
+    <p><font size="2">Please enter your personal details for make the reservation.</font></p>
+    <ion-list inset>
+    <ion-item>
+        <ion-label><font size="2">Customer Name</font></ion-label>
+        <ion-input type="text" id="customername" required minlength="5" [(ngModel)]="cusname" cusname="ngMode"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label><font size="2">Contact Number</font></ion-label>
+        <ion-input type="text" id="contactnumber" required minlength="10" maxlength="10" [(ngModel)]="cusnum" cusnum="ngModel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label><font size="2">NIC</font></ion-label>
+        <ion-input type="text" id="nic" required [(ngModel)]="cusnic" cusnic="ngModel"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label><font size="2">Comments</font></ion-label>
+        <ion-input type="text" id="comments" [(ngModel)]="cuscomments"></ion-input>
+    </ion-item>
+
+    <!--BookBtn-->
+    <button ion-button block (click)= "TableBookingFinalPage();">Book</button>
+    </ion-list>
+</div>
+
+</ion-content>
+

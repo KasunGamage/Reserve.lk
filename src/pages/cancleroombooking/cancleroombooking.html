@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Reserve.lk
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div>
+    <i class="icon  icon-right ion-android-cancel"></i>
+    <p style="text-align: center"><font size="3"><b>Cancel Booking</b></font></p>
+  </div>
+
+  <div >
+    <ion-label class="item item-input">
+      <div class="input-label">
+        Email
+        <ion-input type="text" placeholder="Enter your email here ....." [(ngModel)]="remail" ></ion-input>
+      </div>
+    </ion-label>
+  </div>
+
+
+  <div class="cancle booking func">
+
+    <ion-item no-lines="" *ngFor="let items of res | async">
+
+      <div *ngIf="items.r_email === remail" >
+        <p>Hello {{items.r_firstname}} {{items.r_lastname}} !!</p>
+
+
+        <ion-item no-lines=""> {{items.r_hotelname}} : {{items.r_roomtype}} </ion-item>
+        <button ion-button block (click)= "doAlert(items)">Cancel this ...</button>
+      </div>
+
+
+
+    </ion-item>
+
+
+    <!--CancelButton-->
+
+
+
+  </div>
+
+</ion-content>
